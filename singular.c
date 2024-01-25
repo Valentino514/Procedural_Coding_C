@@ -20,15 +20,16 @@ void shift(double a[], size_t size, double by,int precision){// shift function
     printf("\n");
 
 }
-size_t filter(double a[], size_t count, enum filter_type t, double threshold) { //fucntion that defines each  filter case
+// defines each filter case
+size_t filter(double a[], size_t count, enum filter_type t, double threshold) { 
       size_t i, j;
 
     for (i = 0, j = 0; i < count; i++) {
         switch(t){
             case EQ: //equals
-                if (a[i] == threshold){ //if its equal
-                    a[j] = a[i]; //we bring the value that matches it to the j position
-                    j++; // its the new size of the jagged array. we will then print out the values until j, because its only those that have been changed.
+                if (a[i] == threshold){ 
+                    a[j] = a[i]; 
+                    j++; 
                 }
                 break;
                 // the concept to adjust the values of the other filter cases is the same as the EQ case.
@@ -64,7 +65,7 @@ size_t filter(double a[], size_t count, enum filter_type t, double threshold) { 
                 break;
         }
     }
-
-    return j;// returns the new size of the jagged array, where values are updated.
+// returns the new size of the jagged array, where values are updated.
+    return j;
 }
 
